@@ -18,9 +18,11 @@ Blocks open redirect vulnerabilities by matching encoded characters like %2F%2F.
 HTTP Method Blocking:
 
 Adds specific blocking for methods like TRACE, TRACK, and CONNECT to prevent Cross-Site Tracing (XST) attacks.
+
 More Comprehensive File Extensions Blocking:
 
 Include more comprehensive blocking of dangerous file extensions used in attacks, such as .pfx, .csr, and .pem, among others.
+
 Improved Referrer Blocking:
 
 Deepens protections against referrer spam and malicious traffic originating from attack-heavy domains by blocking specific TLDs known for hosting malicious campaigns.
