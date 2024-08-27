@@ -1,23 +1,30 @@
 # NGINX 8G Firewall
 8G Firewall rules based on Jeff Starr's 7G firewall
 
-V3 changes:
+V4 changes:
 
-1. Additional Event Handler Coverage:
-Expands coverage by adding modern event handlers such as touchstart, touchmove, pointerdown, pointerup, and wheel. These additions help mitigate more advanced XSS and DOM manipulation techniques targeting mobile and modern web apps.
-2. More Comprehensive SQL Injection Protections:
-Extends SQLi protection to include time-based SQL injection methods (pg_sleep, pg_terminate_backend) and encoding techniques (like hex(), ascii()), offering broader defense against various database types.
-3. Extended Command Injection Protection:
-Significantly expands command injection detection by including additional dangerous binaries and system commands, such as openssl, tcpdump, gdb, and strace. These are frequently used in post-exploitation scenarios and can be used for privilege escalation or lateral movement.
-4. Improved Evasive Encoding Detection:
-Incorporates detection for advanced encoding manipulation, such as base64 payloads and hex encoding strategies used to bypass standard input filters.
-5. Expanded Directory Traversal and File Inclusion Protections:
-Extends to block additional sensitive files (like .bash_history, .pem, php://stdin, and phar://). This enhances protection against RFI/LFI attacks targeting broader file systems.
-6. Advanced User Agent Blocking:
-Includes more modern attack tools and user agents for headless browsers (like puppeteer, selenium, phantomjs), which are often used in scraping or automated attacks.
-7. Additional Referrer Blocking:
-Introduces more sophisticated referrer blocking, targeting SEO spam and referrer manipulation attacks using base64-encoded data and javascript-injection techniques.
-8. Expanded File Extension Coverage
-9. Rate Limiting on More Paths:
-10. Stricter SSRF Protection:
-Strengthens protections against SSRF attacks by more thoroughly blocking internal network ranges, cloud metadata services (AWS, GCP), and expanding to IPv6.
+Expanded JavaScript Manipulations:
+
+Adds further protection by covering additional DOM manipulation methods like navigator, screen, and asynchronous JavaScript methods such as XMLHttpRequest, fetch, and requestAnimationFrame.
+
+More Comprehensive Query String Blocking:
+
+Improves protections against more advanced JavaScript and SQL injection techniques, blocking further patterns and ensuring better coverage against obfuscated attacks.
+
+Open Redirect Protection:
+
+Blocks open redirect vulnerabilities by matching encoded characters like %2F%2F.
+
+HTTP Method Blocking:
+
+Adds specific blocking for methods like TRACE, TRACK, and CONNECT to prevent Cross-Site Tracing (XST) attacks.
+More Comprehensive File Extensions Blocking:
+
+Include more comprehensive blocking of dangerous file extensions used in attacks, such as .pfx, .csr, and .pem, among others.
+Improved Referrer Blocking:
+
+Deepens protections against referrer spam and malicious traffic originating from attack-heavy domains by blocking specific TLDs known for hosting malicious campaigns.
+
+Further Protection Against POST Request Vulnerabilities:
+
+Enhanced protections against SQL injection, XSS, and multipart/form-data abuse, ensuring better handling of potentially harmful content in POST requests.
