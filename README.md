@@ -39,6 +39,33 @@ http_map_module (for map directives)
 
 ----------------------------
 
+Set up log rotation
+
+To prevent the blocked.log file from growing indefinitely, set up log rotation.
+
+Create Logrotate Configuration:
+
+**sudo nano /etc/logrotate.d/nginx-blocked**
+
+Add the Following Content:
+
+/var/log/nginx/blocked.log {
+    daily
+    missingok
+    rotate 14
+    compress
+    delaycompress
+    notifempty
+    create 640 www-data www-data
+    sharedscripts
+    postrotate
+        [ -f /var/run/nginx.pid ] && kill -USR1 `cat /var/run/nginx.pid`
+    endscript
+}
+
+---------------------
+
+
 General Notes:
 
 Log File Permissions: Confirm that the /var/log/nginx/blocked.log file exists and has the appropriate permissions for Nginx to write logs. You can set permissions using:
