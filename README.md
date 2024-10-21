@@ -1,6 +1,14 @@
 # NGINX 8G Firewall
 8G Firewall rules based on Jeff Starr's 7G firewall
 
+Required Modules:
+
+http_ssl_module (for SSL)
+http_rewrite_module (for regex)
+http_limit_conn_module (for connection limiting)
+http_limit_req_module (for rate limiting)
+http_map_module (for map directives)
+
 General Notes:
 
 Log File Permissions: Confirm that the /var/log/nginx/blocked.log file exists and has the appropriate permissions for Nginx to write logs. You can set permissions using:
