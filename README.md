@@ -3,15 +3,15 @@
 
 Required Modules:
 
-**http_ssl_module (for SSL)
+**http_ssl_module (for SSL)**
 
-http_rewrite_module (for regex)
+**http_rewrite_module (for regex)**
 
-http_limit_conn_module (for connection limiting)
+**http_limit_conn_module (for connection limiting)**
 
-http_limit_req_module (for rate limiting)
+**http_limit_req_module (for rate limiting)**
 
-http_map_module (for map directives)**
+**http_map_module (for map directives)**
 
 General Notes:
 
