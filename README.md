@@ -1,17 +1,38 @@
 # NGINX 8G Firewall
 8G Firewall rules based on Jeff Starr's 7G firewall
 
-Required Modules:
+**Requirements**
 
-**http_ssl_module (for SSL)**
+2. Log Files and Directories
+a. Ensure Nginx Log Directory Exists
 
-**http_rewrite_module (for regex)**
+Default Location: /var/log/nginx/
 
-**http_limit_conn_module (for connection limiting)**
+If the directory does not exist: 
 
-**http_limit_req_module (for rate limiting)**
+**sudo mkdir -p /var/log/nginx**
 
-**http_map_module (for map directives)**
+b. Create blocked.log File
+
+Purpose: Log blocked/malicious requests for monitoring and analysis.
+
+If the blocked.log file does not already exist:
+
+**sudo touch /var/log/nginx/blocked.log**
+
+**Required Modules:**
+
+http_ssl_module (for SSL)
+
+http_rewrite_module (for regex)
+
+http_limit_conn_module (for connection limiting)
+
+http_limit_req_module (for rate limiting)
+
+http_map_module (for map directives)
+
+----------------------------
 
 General Notes:
 
