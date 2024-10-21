@@ -3,7 +3,8 @@
 
 **Requirements**
 
-2. Log Files and Directories
+Log Files and Directories
+
 a. Ensure Nginx Log Directory Exists
 
 Default Location: /var/log/nginx/
