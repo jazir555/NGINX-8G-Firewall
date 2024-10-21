@@ -3,6 +3,11 @@
 
 **Requirements**
 
+SSL Certificates and Keys
+
+**You must have a valid ssl certificate for your domain. The configuration file has a placeholder which you will need to fill with the path to your SSL certificate.
+**
+
 Log Files and Directories
 
 a. Ensure Nginx Log Directory Exists
