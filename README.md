@@ -25,6 +25,8 @@ If the blocked.log file does not already exist:
 
 **sudo touch /var/log/nginx/blocked.log**
 
+------------------------
+
 **Required Modules:**
 
 http_ssl_module (for SSL)
