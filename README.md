@@ -80,6 +80,7 @@ limit_req_zone: Limits to 5 requests per second with a zone size of 5MB, accommo
 
 limit_conn_zone: Limits the number of concurrent connections per IP, with a zone size of 5MB being adequate for most scenarios.
 
+---------------------
 
 Rules Description
 
