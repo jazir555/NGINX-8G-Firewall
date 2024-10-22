@@ -73,7 +73,9 @@ General Notes:
 Log File Permissions: Confirm that the /var/log/nginx/blocked.log file exists and has the appropriate permissions for Nginx to write logs. You can set permissions using:
 
 sudo touch /var/log/nginx/blocked.log
+
 sudo chown www-data:www-data /var/log/nginx/blocked.log
+
 sudo chmod 640 /var/log/nginx/blocked.log
 
 Configuration:
